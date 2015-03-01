@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'json'
   s.add_runtime_dependency 'english'
-  s.add_runtime_dependency 'sensu-plugins'
+  s.add_runtime_dependency 'sensu-plugin'
   s.add_runtime_dependency 'timeout'
 
   s.add_development_dependency 'codeclimate-test-reporter'

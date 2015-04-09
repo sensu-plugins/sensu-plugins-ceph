@@ -41,6 +41,9 @@ require 'sensu-plugin/check/cli'
 require 'timeout'
 require 'English'
 
+#
+# Check Ceph Health
+#
 class CheckCephHealth < Sensu::Plugin::Check::CLI
   option :keyring,
          description: 'Path to cephx authentication keyring file',
@@ -87,7 +90,7 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
          boolean: true,
          default: false
 
-  def run_cmd(cmd)
+  def run_cmd(cmd) # rubocop:disable all
     pipe, status = nil
     begin
       cmd += config[:cluster] if config[:cluster]
@@ -120,8 +123,8 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
   def strip_warns(result)
     r = result.dup
     r.gsub!(/HEALTH_WARN\ /, '')
-     .gsub!(/\ ?flag\(s\) set/, '')
-     .gsub!(/\n/, '')
+      .gsub!(/\ ?flag\(s\) set/, '')
+      .gsub!(/\n/, '')
     config[:ignore_flags].each do |f|
       r.gsub!(/,?#{f},?/, '')
     end
@@ -132,7 +135,7 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run
+  def run # rubocop:disable all
     result = run_cmd('ceph health')
     unless result.start_with?('HEALTH_OK')
       result = strip_warns(result) if config[:ignore_flags]

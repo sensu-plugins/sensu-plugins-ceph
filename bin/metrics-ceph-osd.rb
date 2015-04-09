@@ -41,6 +41,9 @@ require 'sensu-plugin/metric/cli'
 require 'json'
 require 'English'
 
+#
+# Ceph Osd Metrics
+#
 class CephOsdMetrics < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
          description: 'Metric naming scheme, text prepended to .$parent.$child',
@@ -65,7 +68,7 @@ class CephOsdMetrics < Sensu::Plugin::Metric::CLI::Graphite
     end
   end
 
-  def run
+  def run # rubocop:disable all
     # #YELLOW
     Dir.glob(config[:pattern]).each do |socket| # rubocop:disable Style/Next
       data = `ceph --admin-daemon #{socket} perf dump`

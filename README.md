@@ -5,6 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-ceph/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-ceph)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-ceph/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-ceph)
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-ceph.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-ceph)
+[ ![Codeship Status for sensu-plugins/sensu-plugins-ceph](https://codeship.com/projects/61bdf3c0-d4df-0132-2baa-0e210ac4c62f/status?branch=master)](https://codeship.com/projects/77911)
 
 ## Functionality
 

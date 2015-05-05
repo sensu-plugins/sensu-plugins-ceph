@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.signing_key            = File.expand_path(pvt_key) if $PROGRAM_NAME =~ /gem\z/
   s.summary                = 'Sensu plugins for ceph'
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
-  s.version                = SensuPluginsCeph::VERSION
+  s.version                = SensuPluginsCeph::Version::VER_STRING
 
   s.add_runtime_dependency 'english',      '0.6.3'
   s.add_runtime_dependency 'timeout',      '0.0.1'

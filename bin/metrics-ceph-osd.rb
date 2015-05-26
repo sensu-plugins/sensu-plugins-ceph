@@ -13,7 +13,7 @@
 #
 # DEPENDENCIES:
 #   gem: sensu-plugin
-#   gem: json
+#   gem: english
 #   ceph client
 #
 # USAGE:

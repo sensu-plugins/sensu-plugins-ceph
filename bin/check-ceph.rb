@@ -151,6 +151,7 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
   end
 
   private
+
   def check_ceph_health
     if config[:show_detail]
       run_cmd('ceph health detail')

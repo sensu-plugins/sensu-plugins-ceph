@@ -137,18 +137,28 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
   end
 
   def run # rubocop:disable all
-    result = run_cmd('ceph health')
+    result = check_ceph_health
+
     unless result.start_with?('HEALTH_OK')
       result = strip_warns(result) if config[:ignore_flags]
     end
     ok result if result.start_with?('HEALTH_OK')
 
-    result = run_cmd('ceph health detail') if config[:show_detail]
     result += run_cmd('ceph osd tree') if config[:osd_tree]
+
     if result.start_with?('HEALTH_WARN')
       warning result
     else
       critical result
+    end
+  end
+
+  private
+  def check_ceph_health
+    if config[:show_detail]
+      run_cmd('ceph health detail')
+    else
+      run_cmd('ceph health')
     end
   end
 end

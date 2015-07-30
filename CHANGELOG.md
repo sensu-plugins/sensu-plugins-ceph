@@ -5,7 +5,14 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## Unreleased
 
+## [0.0.4] - 2015-07-23
+
+### Fixed
+- health check only runs once on failure with details
+- removes processing and conditional over health check result when unnecessary
+
 ## [0.0.3] - 2015-07-14
+
 ### Changed
 - updated sensu-plugin gem to 1.2.0
 

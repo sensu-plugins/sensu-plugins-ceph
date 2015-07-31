@@ -7,7 +7,6 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 - nothing
 
 ## [0.0.4] - 2015-07-31
-
 ### Changed
 - updated documentation links
 - updated rubocop to `0.32.1`

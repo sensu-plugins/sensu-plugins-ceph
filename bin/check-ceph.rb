@@ -91,7 +91,7 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
          boolean: true,
          default: false
 
-  def run_cmd(cmd) # rubocop:disable all
+  def run_cmd(cmd)
     pipe, status = nil
     begin
       cmd += config[:cluster] if config[:cluster]
@@ -136,7 +136,7 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
     end
   end
 
-  def run # rubocop:disable all
+  def run
     result = check_ceph_health
     ok result if result.start_with?('HEALTH_OK')
 

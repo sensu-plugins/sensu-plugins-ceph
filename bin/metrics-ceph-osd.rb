@@ -68,9 +68,9 @@ class CephOsdMetrics < Sensu::Plugin::Metric::CLI::Graphite
     end
   end
 
-  def run # rubocop:disable all
+  def run
     # #YELLOW
-    Dir.glob(config[:pattern]).each do |socket| # rubocop:disable Style/Next
+    Dir.glob(config[:pattern]).each do |socket|
       data = `ceph --admin-daemon #{socket} perf dump`
       if $CHILD_STATUS.exitstatus == 0
         # Left side of wildcard

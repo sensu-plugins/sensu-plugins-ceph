@@ -103,7 +103,7 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
     ignore_keys = %w(pgs_by_state version)
     timestamp = Time.now.to_i
     data['pgmap'].each do |key, val|
-      puts "#{config[:prefix]}.#{key} #{val} #{timestamp}\n" unless ignore_keys.include? key
+      output "#{config[:prefix]}.#{key}", val, timestamp unless ignore_keys.include? key
     end
     ok
   end

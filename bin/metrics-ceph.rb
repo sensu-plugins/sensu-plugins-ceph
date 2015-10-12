@@ -33,6 +33,7 @@ require 'sensu-plugin/metric/cli'
 require 'json'
 require 'timeout'
 require 'English'
+require 'socket'
 
 class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
   option :keyring,
@@ -64,7 +65,7 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
          description: 'Metric prefix',
          short: '-p PREFIX',
          long: '--prefix',
-         default: 'ceph'
+         default: "#{Socket.gethostname}.ceph"
 
   def run_cmd(cmd)
     pipe, status = nil

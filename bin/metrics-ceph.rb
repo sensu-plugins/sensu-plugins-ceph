@@ -101,8 +101,9 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
     result = run_cmd('ceph status --format=json')
     data = JSON.parse(result)
     ignore_keys = %w(pgs_by_state version)
+    timestamp = Time.now.to_i
     data['pgmap'].each do |key, val|
-      puts "#{config[:prefix]}.#{key} #{val}\n" unless ignore_keys.include? key
+      puts "#{config[:prefix]}.#{key} #{val} #{timestamp}\n" unless ignore_keys.include? key
     end
     ok
   end

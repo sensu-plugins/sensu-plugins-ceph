@@ -9,6 +9,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ## [0.0.5] - 2015-11-26
 ### Added
 - include client name option when interacting with ceph
+- metrics script
+### Fixes
+- use upstram output
+- default prefix includes hostname
 
 ## [0.0.4] - 2015-07-31
 ### Changed

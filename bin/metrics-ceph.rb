@@ -54,6 +54,12 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
          long: '--cluster',
          proc: proc { |c| " --cluster=#{c}" }
 
+  option :name,
+         description: 'Optional client name',
+         short: '-n NAME',
+         long: '--name',
+         proc: proc { |n| " --name=#{n}" }
+
   option :timeout,
          description: 'Timeout (default 10)',
          short: '-t SEC',
@@ -73,6 +79,7 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
       cmd += config[:cluster] if config[:cluster]
       cmd += config[:keyring] if config[:keyring]
       cmd += config[:monitor] if config[:monitor]
+      cmd += config[:name] if config[:name]
       cmd += ' 2>&1'
       Timeout.timeout(config[:timeout]) do
         pipe = IO.popen(cmd)

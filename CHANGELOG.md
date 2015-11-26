@@ -6,6 +6,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ## Unreleased
 - nothing
 
+## [0.0.5] - 2015-11-26
+### Added
+- include client name option when interacting with ceph
+
 ## [0.0.4] - 2015-07-31
 ### Changed
 - updated documentation links

@@ -65,10 +65,10 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
          proc: proc { |c| " --cluster=#{c}" }
 
   option :name,
-	 description: 'Optional client name',
-	 short: '-n NAME',
-	 long: '--name',
-	 proc: proc { |n| " --name=#{n}" }
+         description: 'Optional client name',
+         short: '-n NAME',
+         long: '--name',
+         proc: proc { |n| " --name=#{n}" }
 
   option :timeout,
          description: 'Timeout (default 10)',

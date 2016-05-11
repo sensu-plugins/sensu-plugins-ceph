@@ -25,14 +25,13 @@ Gem::Specification.new do |s|
                                'development_status' => 'active',
                                'production_status'  => 'unstable - testing recommended',
                                'release_draft'      => 'false',
-                               'release_prerelease' => 'false'
-                              }
+                               'release_prerelease' => 'false' }
   s.name                   = 'sensu-plugins-ceph'
   s.platform               = Gem::Platform::RUBY
   s.post_install_message   = 'You can use the embedded Ruby by setting EMBEDDED_RUBY=true in /etc/default/sensu'
   s.require_paths          = ['lib']
   s.required_ruby_version  = '>= 1.9.3'
-  s.signing_key            = File.expand_path(pvt_key) if $PROGRAM_NAME =~ /gem\z/
+  s.signing_key            = File.expand_path(pvt_key) if $PROGRAM_NAME.end_with?('gem')
   s.summary                = 'Sensu plugins for ceph'
   s.test_files             = s.files.grep(%r{^(test|spec|features)/})
   s.version                = SensuPluginsCeph::Version::VER_STRING

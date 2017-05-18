@@ -10,6 +10,7 @@
 
 ## Files
  * bin/check-ceph.rb
+ * bin/metrics-ceph.rb
  * bin/metrics-ceph-osd.rb
 
 ## Usage

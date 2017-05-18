@@ -1,4 +1,4 @@
-#Change Log
+# Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
@@ -9,6 +9,12 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Fixed
 - metrics-ceph.rb: Prevent stderr from polluting JSON output (@CoRfr)
+
+### Added
+- Ruby 2.3 and 2.4 support (@eheydrick)
+
+### Removed
+- Ruby 1.9.3 support
 
 ## [0.0.5] - 2015-11-26
 ### Added
@@ -34,11 +40,6 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Changed
 - updated sensu-plugin gem to 1.2.0
 
-## 0.0.1 - 2015-04-30
-
-### Added
-- initial release
-
 ## 0.0.2 - 2015-06-02
 
 ### Fixed
@@ -46,3 +47,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Changed
 - removed cruft from /lib
+
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/0.0.5...HEAD
+[0.0.5]: https://github.com/sensu-plugins/sensu-plugins-kubernetes/compare/0.0.4...0.0.5
+[0.0.4]: https://github.com/sensu-plugins/sensu-plugins-kubernetes/compare/0.0.3...0.0.4
+[0.0.3]: https://github.com/sensu-plugins/sensu-plugins-kubernetes/compare/0.0.2...0.0.3

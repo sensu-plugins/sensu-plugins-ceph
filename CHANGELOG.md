@@ -7,6 +7,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Changed
 - Upgrade to Rubocop 0.40 and cleanup
 
+### Fixed
+- metrics-ceph.rb: Prevent stderr from polluting JSON output (@CoRfr)
+
 ## [0.0.5] - 2015-11-26
 ### Added
 - include client name option when interacting with ceph

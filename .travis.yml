@@ -1,19 +1,35 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 2.0
+- 2.1
+- 2.2
+- 2.3.0
+- 2.4.1
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-ceph.gemspec
+- gem install sensu-plugins-ceph-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: uLCFlmPu9ta3quTXUXAdQoxKPn58aM4AQ5jGDq8AVO5ZWbbyY1DD8xGJ09g8rk7c4cNIlta7QBiXGFvkWBIakwft+vUInWKRspbCseZ/JLiDvdhhfaS1XgNJx6ZPcHDqkle3pXjcSEoWcDCt9Y1xAWAsf83923FCkTmvF9tSJ0E=
+  gem: sensu-plugins-kubernetes
+  on:
+    tags: true
+    all_branches: true
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    rvm: 2.3.0
+    rvm: 2.4.1
+    repo: sensu-plugins/sensu-plugins-ceph

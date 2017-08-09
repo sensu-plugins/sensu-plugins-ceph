@@ -145,11 +145,9 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
 
   def run
     result = check_ceph_health
-    ok result if result.start_with?('HEALTH_OK')
-
     result = strip_warns(result) if config[:ignore_flags]
     result += run_cmd('ceph osd tree') if config[:osd_tree]
-
+    ok result if result.start_with?('HEALTH_OK')
     if result.start_with?('HEALTH_WARN')
       warning result
     else

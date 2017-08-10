@@ -5,6 +5,9 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+### Fixed
+- check-ceph.rb: fixed a bug where the ignore flag was not working due to order of operations (@jklare)
+
 ## [1.0.0] - 2017-05-17
 ### Changed
 - Upgrade to Rubocop 0.40 and cleanup

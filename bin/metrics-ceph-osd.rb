@@ -78,7 +78,7 @@ class CephOsdMetrics < Sensu::Plugin::Metric::CLI::Graphite
         # Right side of wildcard
         strip2 = config[:pattern].match(/\*.*$/).to_s.delete('*')
         osd_num = socket.gsub(strip1, '').gsub(strip2, '')
-        JSON.parse(data).each do |k, v|
+        ::JSON.parse(data).each do |k, v|
           k = k.gsub(/\/$/, '').gsub(/\//, '_')
           output_data(v, "#{osd_num}.#{k}")
         end

@@ -105,7 +105,7 @@ class CephMetrics < Sensu::Plugin::Metric::CLI::Graphite
 
   def run
     result = run_cmd('ceph status --format=json')
-    data = JSON.parse(result)
+    data = ::JSON.parse(result)
     ignore_keys = %w(pgs_by_state version)
     timestamp = Time.now.to_i
     data['pgmap'].each do |key, val|

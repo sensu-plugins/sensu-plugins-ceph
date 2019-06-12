@@ -5,10 +5,12 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+### Fixed
+- metrics-ceph-osd.rb: fixed invalid call to JSON.parse by using the scope resultion operators (@CoRfr)
+
 ## [1.0.1] - 2017-08-09
 ### Fixed
 - check-ceph.rb: fixed a bug where the ignore flag was not working due to order of operations (@jklare)
-- metrics-ceph[-osd].rb: fixed invalid call to JSON.parse
 
 ### Added
 - slack badge (@majormoses)

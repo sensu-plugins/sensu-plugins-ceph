@@ -5,6 +5,7 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+## [1.0.2] - 2019-06-11
 ### Fixed
 - metrics-ceph-osd.rb: fixed invalid call to JSON.parse by using the scope resultion operators (@CoRfr)
 
@@ -61,7 +62,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 ### Changed
 - removed cruft from /lib
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/0.0.5...1.0.0
 [0.0.5]: https://github.com/sensu-plugins/sensu-plugins-ceph/compare/0.0.4...0.0.5

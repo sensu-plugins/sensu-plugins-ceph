@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+### Fixed
+- check-ceph.rb: fixed an error when '--ignore-flags' is set but the flag is not (@ideaship)
 
 ## [1.0.2] - 2019-06-11
 ### Fixed

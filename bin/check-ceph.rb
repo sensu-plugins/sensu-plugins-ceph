@@ -130,9 +130,10 @@ class CheckCephHealth < Sensu::Plugin::Check::CLI
 
   def strip_warns(result)
     r = result.dup
+    # No method chaining (gsub! might return nil)
     r.gsub!(/HEALTH_WARN\ /, '')
-     .gsub!(/\ ?flag\(s\) set/, '')
-     .delete!("\n")
+    r.gsub!(/\ ?flag\(s\) set/, '')
+    r.delete!("\n")
     config[:ignore_flags].each do |f|
       r.gsub!(/,?#{f},?/, '')
     end
